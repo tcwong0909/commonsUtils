@@ -37,7 +37,7 @@ public class POIUtils {
         cellStyle.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy"));
         for (int i = 0; i < positions.size(); i++) {
             Position position = positions.get(i);
-            HSSFRow row1 = sheet.createRow(i+1);
+            HSSFRow row1 = sheet.createRow(i + 1);
             HSSFCell c0 = row1.createCell(0);
             HSSFCell c1 = row1.createCell(1);
             HSSFCell c2 = row1.createCell(2);
@@ -46,13 +46,13 @@ public class POIUtils {
             c1.setCellValue(position.getName());
             c2.setCellValue(position.getCreatedate());
             c2.setCellStyle(cellStyle);
-            c3.setCellValue(position.getEnabled() ? "是":"否");
+            c3.setCellValue(position.getEnabled() ? "是" : "否");
         }
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         workbook.write(outputStream);
         HttpHeaders headers = new HttpHeaders();
         headers.setContentDispositionFormData("attachment",
-                new String ("职位表.xls".getBytes("UTF-8"),"iso-8859-1"));
+                new String("职位表.xls".getBytes("UTF-8"), "iso-8859-1"));
         return new ResponseEntity<byte[]>(outputStream.toByteArray(), headers, HttpStatus.CREATED);
     }
 }

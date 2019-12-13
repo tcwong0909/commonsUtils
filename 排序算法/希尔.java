@@ -13,7 +13,7 @@ public class Shell {
         int length = a.length;
         int gap = 1;
         while (gap < length) {
-            gap = gap*3+1;
+            gap = gap * 3 + 1;
         }
         while (gap > 0) {
             for (int i = gap; i < length; i++) {
@@ -21,11 +21,11 @@ public class Shell {
                 int j = i - gap;
                 while (j >= 0 && a[j] > temp) {
                     a[j + gap] = a[j];
-                    j-=gap;
+                    j -= gap;
                 }
-                a[j+gap] = temp;
+                a[j + gap] = temp;
             }
-            gap= gap/3;
+            gap = gap / 3;
         }
         System.out.println(Arrays.toString(a));
     }

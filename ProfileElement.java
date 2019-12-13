@@ -17,6 +17,7 @@ public class ProfileElement implements Serializable {
 
     /**
      * 转换JSON
+     *
      * @param profileElement
      * @return
      */
@@ -24,18 +25,19 @@ public class ProfileElement implements Serializable {
     public static String getJsonStr(ProfileElement profileElement) {
         if (profileElement.getChildren().size() == 0) {
             return "\"" + profileElement.getFileKey() + "\"" + ":" + "\"" + profileElement.getFileValue() + "\"";
-        }else {
-            String retStr = "\""+profileElement.getFileKey()+"\""+":{";
+        } else {
+            String retStr = "\"" + profileElement.getFileKey() + "\"" + ":{";
             for (ProfileElement element : profileElement.getChildren()) {
-                retStr += getJsonStr(element)+",";
+                retStr += getJsonStr(element) + ",";
             }
-            retStr = retStr.substring(0,retStr.length()-1)+"}";
+            retStr = retStr.substring(0, retStr.length() - 1) + "}";
             return retStr;
         }
     }
 
     /**
      * 集合 转换 root
+     *
      * @param listElements
      * @return
      */

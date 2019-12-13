@@ -37,7 +37,7 @@ public class MongoDemoController {
         MongoCollection<Document> collection = mongoTemplate.getCollection(COLLECTION_DEMO);
         BasicDBObject queryParse = BasicDBObject.parse(queryDocument);
         BasicDBObject parse = BasicDBObject.parse(ducument);
-        UpdateResult result = collection.updateOne(queryParse, new BasicDBObject("$set",parse));
+        UpdateResult result = collection.updateOne(queryParse, new BasicDBObject("$set", parse));
         return result.getModifiedCount();
     }
 
@@ -47,11 +47,11 @@ public class MongoDemoController {
         BasicDBObject parse = BasicDBObject.parse(ducument);
         Set<String> keySet = parse.keySet();
         BasicDBObject dbObject = new BasicDBObject();
-        dbObject.put("id",id);
+        dbObject.put("id", id);
         for (String key : keySet) {
-            dbObject.put(key, new BasicDBObject("$exists",true));
+            dbObject.put(key, new BasicDBObject("$exists", true));
         }
-        UpdateResult result = collection.updateOne(dbObject, new BasicDBObject("$set",parse));
+        UpdateResult result = collection.updateOne(dbObject, new BasicDBObject("$set", parse));
         return result.getModifiedCount();
     }
 

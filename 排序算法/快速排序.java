@@ -7,7 +7,7 @@ public class Demo9 {
 
     public static void main(String[] args) {
 
-        int[] arr = new int[]{0,8,1,6,2,3,9,7,5};
+        int[] arr = new int[]{0, 8, 1, 6, 2, 3, 9, 7, 5};
         sort(arr);
         //
         System.out.println(Arrays.toString(arr));
@@ -15,7 +15,7 @@ public class Demo9 {
 
 
     public static void sort(int[] arr) {
-        sort(arr,0,arr.length-1);
+        sort(arr, 0, arr.length - 1);
     }
 
     private static void sort(int[] arr, int startIndex, int endIndex) {
@@ -23,8 +23,8 @@ public class Demo9 {
             return;
         }
         int partition = partition(arr, startIndex, endIndex);
-        sort(arr,startIndex,partition-1);
-        sort(arr,partition+1,endIndex);
+        sort(arr, startIndex, partition - 1);
+        sort(arr, partition + 1, endIndex);
 
     }
 

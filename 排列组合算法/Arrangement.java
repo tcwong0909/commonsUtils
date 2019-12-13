@@ -9,8 +9,7 @@ import java.util.List;
  */
 public class Arrangement {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         List<String> baseList = new ArrayList<>();
         baseList.add("1");
         baseList.add("2");
@@ -26,17 +25,14 @@ public class Arrangement {
         List<List<String>> resultList = listAll(baseList, depath);
         System.out.println(resultList.size());
 
-        for(List<String> list : resultList)
-        {
+        for (List<String> list : resultList) {
             System.out.println(list.toString());
         }
     }
 
-    public static List<List<String>> listAll(List<String> baseList, int depth)
-    {
+    public static List<List<String>> listAll(List<String> baseList, int depth) {
         List<List<String>> resultList = new ArrayList<>();
-        if(depth <= 0)
-        {
+        if (depth <= 0) {
             return resultList;
         }
         int size = baseList.size();
@@ -46,27 +42,22 @@ public class Arrangement {
         return resultList;
     }
 
-    private static void listAll(List<String> baseList, int depth, List<String> transferList, List<List<String>> resultList)
-    {
-        if(depth == 0)
-        {
+    private static void listAll(List<String> baseList, int depth, List<String> transferList, List<List<String>> resultList) {
+        if (depth == 0) {
             List<String> list = new ArrayList<>(transferList);
             resultList.add(list);
-            if(transferList.size() > 0)
-            {
+            if (transferList.size() > 0) {
                 transferList.remove(transferList.size() - 1);
             }
             return;
         }
-        depth --;
-        for(int i = 0; i < baseList.size(); i ++)
-        {
+        depth--;
+        for (int i = 0; i < baseList.size(); i++) {
             List<String> tempList = new LinkedList<>(baseList);
             transferList.add(tempList.remove(i));
             listAll(tempList, depth, transferList, resultList);
         }
-        if(transferList.size() > 0)
-        {
+        if (transferList.size() > 0) {
             transferList.remove(transferList.size() - 1);
         }
     }

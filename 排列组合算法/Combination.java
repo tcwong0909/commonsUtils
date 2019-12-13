@@ -9,8 +9,7 @@ import java.util.List;
  */
 public class Combination {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         List<String> baseList = new ArrayList<>();
         baseList.add("1");
         baseList.add("2");
@@ -26,46 +25,38 @@ public class Combination {
         List<List<String>> resultList = listAll(baseList, depath);
         System.out.println(resultList.size());
 
-        for(List<String> list : resultList)
-        {
+        for (List<String> list : resultList) {
             System.out.println(list.toString());
         }
     }
 
-    public static List<List<String>> listAll(List<String> baseList, int depth)
-    {
+    public static List<List<String>> listAll(List<String> baseList, int depth) {
         List<List<String>> resultList = new ArrayList<>();
-        if(depth <= 0)
-        {
+        if (depth <= 0) {
             return resultList;
         }
         int size = baseList.size();
         depth = size > depth ? depth : size;
         List<String> transferList = new LinkedList<>();
-        listAll(baseList, depth, transferList, resultList,0);
+        listAll(baseList, depth, transferList, resultList, 0);
         return resultList;
     }
 
-    private static void listAll(List<String> baseList, int depth, List<String> transferList, List<List<String>> resultList,int index)
-    {
-        if(depth == 0)
-        {
+    private static void listAll(List<String> baseList, int depth, List<String> transferList, List<List<String>> resultList, int index) {
+        if (depth == 0) {
             List<String> list = new ArrayList<>(transferList);
             resultList.add(list);
-            if(transferList.size() > 0)
-            {
+            if (transferList.size() > 0) {
                 transferList.remove(transferList.size() - 1);
             }
             return;
         }
-        depth --;
-        for(int i = index; i < baseList.size()-depth; i ++)
-        {
+        depth--;
+        for (int i = index; i < baseList.size() - depth; i++) {
             transferList.add(baseList.get(i));
-            listAll(baseList, depth, transferList, resultList,i+1);
+            listAll(baseList, depth, transferList, resultList, i + 1);
         }
-        if(transferList.size() > 0)
-        {
+        if (transferList.size() > 0) {
             transferList.remove(transferList.size() - 1);
 
         }

@@ -21,7 +21,7 @@ public class Demo8 {
         int[] countArr = new int[max + 1];
         for (int i = 0; i < length; i++) {
             countArr[arr[i]]++;
-            arr[i]=0;
+            arr[i] = 0;
         }
 
         int index = 0;

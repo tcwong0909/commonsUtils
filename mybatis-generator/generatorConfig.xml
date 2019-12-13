@@ -1,200 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE generatorConfiguration
-  PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
-  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
 
-	<classPathEntry	location="mysql-connector-java-5.1.38.jar"/>
-	<context id="DB2Tables"	targetRuntime="MyBatis3">
- <commentGenerator> 
-				
-      <!-- ÊÇ·ñÈ¡Ïû×¢ÊÍ -->  
-      <property name="suppressDate" value="true"/>  
-      <!-- ÊÇ·ñÉú³É×¢ÊÍ´úÊ±¼ä´Á-->  
-      <property name="suppressAllComments" value="true"/> 
+    <classPathEntry location="mysql-connector-java-5.1.38.jar"/>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
 
-</commentGenerator>  
-		<!-- Á´½ÓÅäÖÃ --> 
-		<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/jd" userId="root" password="123456">
-		</jdbcConnection>
-		<javaTypeResolver>
-			<!-- ÊÇ·ñÊ¹ÓÃbigDecimal£¬ false¿É×Ô¶¯×ª»¯ÒÔÏÂÀàÐÍ£¨Long, Integer, Short, etc.£© --> 
-			<property name="forceBigDecimals" value="false"/>
-		</javaTypeResolver>
+            <!-- ï¿½Ç·ï¿½È¡ï¿½ï¿½×¢ï¿½ï¿½ -->
+            <property name="suppressDate" value="true"/>
+            <!-- ï¿½Ç·ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½Í´ï¿½Ê±ï¿½ï¿½ï¿½-->
+            <property name="suppressAllComments" value="true"/>
 
-		<javaModelGenerator targetPackage="com.tcwong.bean" targetProject="src">
-			<property name="enableSubPackages" value="true"/>
-			<property name="trimStrings" value="true"/>
-		</javaModelGenerator>
+        </commentGenerator>
+        <!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/jd" userId="root"
+                        password="123456">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <!-- ï¿½Ç·ï¿½Ê¹ï¿½ï¿½bigDecimalï¿½ï¿½ falseï¿½ï¿½ï¿½Ô¶ï¿½×ªï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Í£ï¿½Long, Integer, Short, etc.ï¿½ï¿½ -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
 
-		<sqlMapGenerator targetPackage="com.tcwong.mapper" targetProject="src">
-			<property name="enableSubPackages" value="true"/>
-		</sqlMapGenerator>
+        <javaModelGenerator targetPackage="com.tcwong.bean" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
 
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.tcwong.mapper" targetProject="src">
-			<property name="enableSubPackages" value="true"/>
-		</javaClientGenerator>
-		<!--domainObjectName ÊµÌåÀàÃû tableName Òª×Ô¶¯Éú³ÉµÄ±íÃû enable* ÐèÒªÊ²Ã´¿ªÆôÊ²Ã´Îªtrue·ñÎªfalse --> 
-		<table tableName="products" domainObjectName="Products" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <sqlMapGenerator targetPackage="com.tcwong.mapper" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
 
-		<!-- <table tableName="orders" domainObjectName="Orders" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		 -->
-		<!-- <table tableName="food" domainObjectName="Food" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table> -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.tcwong.mapper" targetProject="src">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--domainObjectName Êµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ tableName Òªï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ÉµÄ±ï¿½ï¿½ï¿½ enable* ï¿½ï¿½ÒªÊ²Ã´ï¿½ï¿½ï¿½ï¿½Ê²Ã´Îªtrueï¿½ï¿½Îªfalse -->
+        <table tableName="products" domainObjectName="Products" enableCountByExample="false"
+               enableUpdateByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false" selectByExampleQueryId="false"></table>
 
-		<!-- <table tableName="adjustsalary" domainObjectName="AdjustSalary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="appraise" domainObjectName="Appraise" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="department" domainObjectName="Department" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="employee" domainObjectName="Employee" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="employeeec" domainObjectName="Employeeec" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="employeeremove" domainObjectName="Employeeremove" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="employeetrain" domainObjectName="Employeetrain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="empsalary" domainObjectName="EmpSalary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="hr" domainObjectName="Hr" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="hr_role" domainObjectName="HrRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="joblevel" domainObjectName="JObLevel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="menu" domainObjectName="Menu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="menu_role" domainObjectName="MenuRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="msgcontent" domainObjectName="MsgContent" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="nation" domainObjectName="Nation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="oplog" domainObjectName="OpLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="politicsstatus" domainObjectName="Politicsstatus" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		
-		<table tableName="position" domainObjectName="Position" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		
-		<table tableName="role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="salary" domainObjectName="Salary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="sysmsg" domainObjectName="SysMsg" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		 -->
-		<!--<table tableName="carriers" domainObjectName="Carriers" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="contact" domainObjectName="Contact" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="driver" domainObjectName="Driver" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="goods" domainObjectName="Goods" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="logdic" domainObjectName="Logdic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="scheduling" domainObjectName="Scheduling" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="syslog" domainObjectName="Syslog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="truck" domainObjectName="Truck" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="truckTeam" domainObjectName="TruckTeam" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-		<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-	    <table tableName="classify" domainObjectName="Classify" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="customer_addr" domainObjectName="CustomerAddr" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="customer_inf" domainObjectName="CustomerInf" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-	    <table tableName="customer_login" domainObjectName="CustomerLogin" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		
-	    <table tableName="customer_login_log" domainObjectName="CustomerLoginLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="customer_point_log" domainObjectName="CustomerPointLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="home_ad" domainObjectName="HomeAd" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="home_sc" domainObjectName="HomeSc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="news" domainObjectName="News" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	    <table tableName="order_cart" domainObjectName="OrderCart" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="order_detail" domainObjectName="OrderDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="order_master" domainObjectName="OrderMaster" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="product_comment" domainObjectName="ProductComment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="product_image" domainObjectName="ProductImage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="product_swipe" domainObjectName="ProductSwipe" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="shipping_info" domainObjectName="ShippingInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="warehouse_info" domainObjectName="WarehouseInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>
-		<table tableName="warehouse_product" domainObjectName="WarehouseProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
-		enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-		
-			    <!-- <table tableName="tb_content_category" domainObjectName="TbContentCategory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_item" domainObjectName="TbItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_item_cat" domainObjectName="TbItemCat" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_item_desc" domainObjectName="TbItemDesc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_item_param" domainObjectName="TbItemParam" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_item_param_item" domainObjectName="TbItemParamItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_order" domainObjectName="TbOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_order_item" domainObjectName="TbOrderItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
-	     <table tableName="tb_order_shipping" domainObjectName="TbOrderShipping" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>		 
-	     <table tableName="tb_user" domainObjectName="TbUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>	 
-		 <table tableName="tb_content" domainObjectName="TbContent" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
-	</context>
+        <!-- <table tableName="orders" domainObjectName="Orders" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+         -->
+        <!-- <table tableName="food" domainObjectName="Food" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table> -->
+
+        <!-- <table tableName="adjustsalary" domainObjectName="AdjustSalary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="appraise" domainObjectName="Appraise" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="department" domainObjectName="Department" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="employee" domainObjectName="Employee" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="employeeec" domainObjectName="Employeeec" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="employeeremove" domainObjectName="Employeeremove" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="employeetrain" domainObjectName="Employeetrain" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="empsalary" domainObjectName="EmpSalary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="hr" domainObjectName="Hr" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="hr_role" domainObjectName="HrRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="joblevel" domainObjectName="JObLevel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="menu" domainObjectName="Menu" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="menu_role" domainObjectName="MenuRole" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="msgcontent" domainObjectName="MsgContent" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="nation" domainObjectName="Nation" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="oplog" domainObjectName="OpLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="politicsstatus" domainObjectName="Politicsstatus" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+
+        <table tableName="position" domainObjectName="Position" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+
+        <table tableName="role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="salary" domainObjectName="Salary" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="sysmsg" domainObjectName="SysMsg" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+         -->
+        <!--<table tableName="carriers" domainObjectName="Carriers" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="contact" domainObjectName="Contact" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="driver" domainObjectName="Driver" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="goods" domainObjectName="Goods" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="logdic" domainObjectName="Logdic" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="role" domainObjectName="Role" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="scheduling" domainObjectName="Scheduling" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="syslog" domainObjectName="Syslog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="truck" domainObjectName="Truck" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="truckTeam" domainObjectName="TruckTeam" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="classify" domainObjectName="Classify" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="customer_addr" domainObjectName="CustomerAddr" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="customer_inf" domainObjectName="CustomerInf" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="customer_login" domainObjectName="CustomerLogin" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+
+        <table tableName="customer_login_log" domainObjectName="CustomerLoginLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="customer_point_log" domainObjectName="CustomerPointLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="home_ad" domainObjectName="HomeAd" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="home_sc" domainObjectName="HomeSc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="news" domainObjectName="News" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="order_cart" domainObjectName="OrderCart" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="order_detail" domainObjectName="OrderDetail" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="order_master" domainObjectName="OrderMaster" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="product" domainObjectName="Product" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="product_comment" domainObjectName="ProductComment" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="product_image" domainObjectName="ProductImage" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="product_swipe" domainObjectName="ProductSwipe" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="shipping_info" domainObjectName="ShippingInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="user" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="warehouse_info" domainObjectName="WarehouseInfo" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>
+        <table tableName="warehouse_product" domainObjectName="WarehouseProduct" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"
+        enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+
+        <!-- <table tableName="tb_content_category" domainObjectName="TbContentCategory" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_item" domainObjectName="TbItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_item_cat" domainObjectName="TbItemCat" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_item_desc" domainObjectName="TbItemDesc" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_item_param" domainObjectName="TbItemParam" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_item_param_item" domainObjectName="TbItemParamItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_order" domainObjectName="TbOrder" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_order_item" domainObjectName="TbOrderItem" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_order_shipping" domainObjectName="TbOrderShipping" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_user" domainObjectName="TbUser" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>
+ <table tableName="tb_content" domainObjectName="TbContent" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"></table>-->
+    </context>
 </generatorConfiguration>
